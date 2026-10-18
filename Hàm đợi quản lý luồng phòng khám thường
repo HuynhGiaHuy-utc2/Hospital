@@ -24,3 +24,14 @@ bool enqueue(Patient p) {
         count++;
         return true;
     }
+    // Lấy bệnh nhân ở đầu mảng ra 
+    Patient dequeue() {
+        if (isEmpty()) {
+            Patient emptyPatient = {0, "", 0, "", 0};
+            return emptyPatient;
+        }
+        Patient p = arr[frontIndex];
+        frontIndex = (frontIndex + 1) % MAX; // Tăng chỉ số vòng tròn
+        count--;
+        return p;
+    }
