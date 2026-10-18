@@ -1,0 +1,18 @@
+// 3. TỰ CÀI ĐẶT HÀNG ĐỢI BẰNG MẢNG VÒNG (CIRCULAR ARRAY QUEUE)
+// (Dùng cho: Phòng khám thường - Sức chứa cố định)
+class QueueCircularArray {
+private:
+    static const int MAX = 50; // Sức chứa tối đa của phòng khám
+    Patient arr[MAX];
+    int frontIndex;            // Chỉ số phần tử đầu
+    int rearIndex;             // Chỉ số phần tử cuối
+    int count;                 // Số lượng bệnh nhân hiện tại
+public:
+    QueueCircularArray() {
+        frontIndex = 0;
+        rearIndex = -1;
+        count = 0;
+    }
+    bool isEmpty() { return count == 0; }
+    bool isFull() { return count == MAX; }
+    int size() { return count; }
