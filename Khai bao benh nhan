@@ -3,3 +3,11 @@
 #include <iomanip>
 
 using namespace std;
+struct Patient{
+int stt;
+string name;
+int age;
+string symptom;
+int priority;
+
+
