@@ -1,0 +1,150 @@
+// HANG DOI UU TIEN QUAN LY LUONG KHOA CAP CUU VA LICH SU KHAM BENH
+struct Node {
+    Patient data;
+    Node* next;
+
+    Node(Patient p) {
+        data = p;
+        next = nullptr;
+    }
+};
+
+// HANG DOI UU TIEN CAP CUU
+class EmergencyQueue() {
+private:
+    Node* head;
+    int size;
+
+public:
+    EmergencyQueue() {
+        head = nullptr;
+        size = 0;
+    }
+    ~EmergencyQueue() {
+        while (head != nullptr) {
+            Node* temp = head;
+            head = head->next;
+            delete temp;
+        }
+    }
+
+    // THEM BENH NHAN THEO MUC DO UU TIEN
+    void enqueue(Patient p) {
+        Node* newNode = new Node(p);
+
+        // DANH SACH TRONG HOAC BENH NHAN UU TIEN CAO HON
+        if (head == nullptr ||
+            p.priority < head->data.priority) {
+            newNode->next = head;
+            head = newNode;
+        } else {
+            Node* current = head;
+
+            // CHEN SAU CAC BENH NHAN CO UU TIEN BANG NHAU
+            while (current->next != nullptr &&
+                   current->next->data.priority
+                       <= p.priority) {
+                current = current->next;
+            }
+            newNode->next = current->next;
+            current->next = newNode;
+        }
+        size++;
+        cout << "Da them benh nhan vao hang doi cap cuu!\n";
+    }
+
+    // GOI BENH NHAN UU TIEN CAO NHAT
+    bool dequeue(Patient& p) {
+        if (head == nullptr) {
+            cout << "Hang doi cap cuu dang trong!\n";
+            return false;
+        }
+        Node* temp = head;
+        p = temp->data;
+        head = head->next;
+        delete temp;
+        size--;
+        return true;
+    }
+
+    // XEM DANH SACH CHO CAP CUU
+    void display() const {
+        if (head == nullptr) {
+            cout << "Khong co benh nhan cap cuu.\n";
+            return;
+        }
+        Node* current = head;
+        cout << "\n=== HANG DOI CAP CUU ===\n";
+        while (current != nullptr) {
+           cout << "Ma so: " << current->data.stt
+                << "Ten: " << current->data.name
+                << "Tuoi: " << current->data.age
+                << "Trieu chung: " << current->data.symptom
+                << "Muc uu tien: " << current->data.priority << '\n';
+           current = current->next;
+        }
+    }
+    bool isEmpty() const {
+        return head == nullptr;
+    }
+    int getSize() const {
+        return size;
+    }
+};
+
+// LUU LICH SU KHAM
+class HistoryList {
+private:
+    Node* head;
+    Node* tail;
+    int size;
+public:
+    HistoryList() {
+        head = nullptr;
+        tail = nullptr;
+        size = 0;
+    }
+    ~HistoryList() {
+        while (head != nullptr) {
+            Node* temp = head;
+            head = head->next;
+            delete temp;
+        }
+        tail = nullptr;
+    }
+
+    // THEM BENH NHAN VAO CUOI LICH SU
+    void addHistory(Patient p) {
+        Node* newNode = new Node(p);
+        if (head == nullptr) {
+            head = tail = newNode;
+        } else {
+            tail->next = newNode;
+            tail = newNode;
+        }
+        size++;
+    }
+
+    // IN LICH SU KHAM BENH
+    void displayHistory() const {
+        if (head == nullptr) {
+            cout << "Chua co lich su kham benh.\n";
+            return;
+        }
+        Node* current = head;
+        cout << "\n=== LICH SU KHAM BENH ===\n";
+        while (current != nullptr) {
+            cout << "Ma so: " << current->data.stt
+                 << "Ten: " << current->data.name
+                 << "Tuoi: " << current->data.age
+                 << "Trieu chung: " << current->data.symptom
+                 << "Muc uu tien: " << current->data.priority << '\n';
+            current = current->next;
+        }
+   }
+   int getSize() const {
+       return size;
+   }
+};
+
+
