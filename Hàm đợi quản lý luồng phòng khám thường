@@ -79,3 +79,24 @@ public:
         cin >> p.priority;
 
         if (p.priority == 1) {
+ Phân luồng phòng khám thường
+            int choice;
+            cout << "Chọn phòng khám (1: Phòng Nội, 2: Phòng Ngoại): ";
+            cin >> choice;
+
+            if (choice == 1) {
+                if (roomInternal.enqueue(p)) {
+                    int waitTime = (roomInternal.size() - 1) * 15; // 15 phút/người
+                    cout << "=> Đã xếp vào PHÒNG NỘI. Thời gian chờ dự kiến: " << waitTime << " phút.\n";
+                } else {
+                    cout << "=> Phòng Nội đã đầy!\n";
+                }
+            } else {
+                if (roomSurgical.enqueue(p)) {
+                    int waitTime = (roomSurgical.size() - 1) * 15;
+                    cout << "=> Đã xếp vào PHÒNG NGOẠI. Thời gian chờ dự kiến: " << waitTime << " phút.\n";
+                } else {
+                    cout << "=> Phòng Ngoại đã đầy!\n";
+                }
+            }
+        } 
