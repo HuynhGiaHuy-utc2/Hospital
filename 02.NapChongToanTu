@@ -1,12 +1,12 @@
-//nap chong toan tu de so sanh muc do uu tien giua cac benh nhan
+//Nạp chồng toán tử để so sánh mức độ ưu tiên giữa các bệnh nhân
 bool operator < (const BenhNhan& khac) const {
-//TH1: cung muc do uu tien
+//TH1: Cùng mức độ ưu tiên
 if (this->MucUuTien == khac.MucUuTien) {
-//benh nhan den truoc (stt nho hon) duoc uu tien hon
-//tra ve true neu benh nhan den dau (stt lon hon), tuc la do uu tien thap hon
+//Bệnh nhân đến trước (stt nhỏ hơn) được ưu tiên hơn
+//Trả về true nếu bệnh nhân đến sau (stt lớn hơn), là độ ưu tiên thấp hơn
 return this->stt > khac.stt;
 }
-//TH2: khac muc do uu tien, neu muc uu tien nho hon thi do uu tien thap hon
+//TH2: Khác mức độ ưu tiên, nếu MucUcTien nhỏ hơn thì độ ưu tiên thiên thấp hơn
 return this->MucUuTien < khac.MucUuTien;
 }
 };
