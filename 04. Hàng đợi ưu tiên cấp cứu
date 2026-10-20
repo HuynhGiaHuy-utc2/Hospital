@@ -1,4 +1,4 @@
-// HANG DOI UU TIEN CAP CUU
+// HÀNG ĐỢI ƯU TIÊN CẤP CỨU
 class EmergencyQueue {
 private:
     Node* head;
@@ -16,11 +16,11 @@ public:
         }
     }
 
-    // Them benh nhan theo muc do uu tien
+    // Thêm bệnh nhân theo mức độ ưu tiên
     void enqueue(Patient p) {
         Node* newNode = new Node(p);
 
-        // Danh sach trong hoac benh nhan uu tien cao hon
+        // Danh sách trống hoặc bệnh nhân ưu tiên cao hơn
         if (head == nullptr ||
             p.priority < head->data.priority) {
             newNode->next = head;
@@ -28,7 +28,7 @@ public:
         } else {
             Node* current = head;
 
-            // Chen sau cac benh nhan co uu tien bang nhau
+            // Chèn sau các bệnh nhân có ưu tiên cao hơn
             while (current->next != nullptr &&
                    current->next->data.priority
                        <= p.priority) {
