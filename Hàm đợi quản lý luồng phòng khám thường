@@ -57,3 +57,25 @@ private:
     QueueLinkedList emergencyQueue;  // Hàng đợi Khoa Cấp cứu (DSLK Đơn)
     QueueLinkedList historyQueue;    // Lịch sử khám xong (DSLK Đơn)
     int autoSTT;                     // Bộ phát số thứ tự tăng dần
+public:
+    Hospital() {
+        autoSTT = 1;
+    }
+
+    // Nghiệp vụ 1: Tiếp nhận và phân luồng bệnh nhân
+    void receivePatient() {
+        Patient p;
+        p.stt = autoSTT++;
+
+        cout << "\n----------------------------------------\n";
+        cout << "      TIẾP NHẬN BỆNH NHÂN (STT: " << p.stt << ")\n";
+        cout << "----------------------------------------\n";
+        cin.ignore();
+        cout << "Nhập họ tên bệnh nhân: "; getline(cin, p.name);
+        cout << "Nhập tuổi: "; cin >> p.age;
+        cin.ignore();
+        cout << "Nhập triệu chứng: "; getline(cin, p.symptom);
+        cout << "Mức độ ưu tiên (1: Thường, 2: Cấp cứu nhẹ, 3: Nguy kịch): ";
+        cin >> p.priority;
+
+        if (p.priority == 1) {
