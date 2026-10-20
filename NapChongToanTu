@@ -1,0 +1,12 @@
+//nap chong toan tu de so sanh muc do uu tien giua cac benh nhan
+bool operator < (const BenhNhan& khac) const {
+//TH1: cung muc do uu tien
+if (this->MucUuTien == khac.MucUuTien) {
+//benh nhan den truoc (stt nho hon) duoc uu tien hon
+//tra ve true neu benh nhan den dau (stt lon hon), tuc la do uu tien thap hon
+return this->stt > khac.stt;
+}
+//TH2: khac muc do uu tien, neu muc uu tien nho hon thi do uu tien thap hon
+return this->MucUuTien < khac.MucUuTien;
+}
+};
