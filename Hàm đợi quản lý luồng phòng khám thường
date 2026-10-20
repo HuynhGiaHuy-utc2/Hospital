@@ -50,3 +50,10 @@ bool enqueue(Patient p) {
         }
     }
 };
+class Hospital {
+private:
+    QueueCircularArray roomInternal; // Hàng đợi Phòng khám Nội (Mảng vòng)
+    QueueCircularArray roomSurgical; // Hàng đợi Phòng khám Ngoại (Mảng vòng)
+    QueueLinkedList emergencyQueue;  // Hàng đợi Khoa Cấp cứu (DSLK Đơn)
+    QueueLinkedList historyQueue;    // Lịch sử khám xong (DSLK Đơn)
+    int autoSTT;                     // Bộ phát số thứ tự tăng dần
