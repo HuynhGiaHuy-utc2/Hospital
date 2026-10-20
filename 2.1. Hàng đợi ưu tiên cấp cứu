@@ -1,0 +1,81 @@
+// HANG DOI UU TIEN CAP CUU
+class EmergencyQueue {
+private:
+    Node* head;
+    int size;
+public:
+    EmergencyQueue() {
+        head = nullptr;
+        size = 0;
+    }
+    ~EmergencyQueue() {
+        while (head != nullptr) {
+            Node* temp = head;
+            head = head->next;
+            delete temp;
+        }
+    }
+
+    // Them benh nhan theo muc do uu tien
+    void enqueue(Patient p) {
+        Node* newNode = new Node(p);
+
+        // Danh sach trong hoac benh nhan uu tien cao hon
+        if (head == nullptr ||
+            p.priority < head->data.priority) {
+            newNode->next = head;
+            head = newNode;
+        } else {
+            Node* current = head;
+
+            // Chen sau cac benh nhan co uu tien bang nhau
+            while (current->next != nullptr &&
+                   current->next->data.priority
+                       <= p.priority) {
+               current = current->next;
+            }
+            newNode->next = current->next;
+            current->next = newNode;
+        }
+        size++;
+        cout << "Da them benh nhan vao hang doi cap cuu!\n";
+    }
+
+    // Gọi bệnh nhân ưu tiên cao nhất
+    bool dequeue(Patient& p) {
+        if (head == nullptr) {
+            cout << "Hang doi cap cuu dang trong!\n";
+            return false;
+        }
+        Node* temp = head;
+        p = temp->data;
+        head = head->next;
+        delete temp;
+        size--;
+        return true;
+    }
+
+    // Xem danh sách chờ cấp cứu
+    void display() const {
+        if (head == nullptr) {
+            cout << "Khong co benh nhan cap cuu.\n";
+            return;
+        }
+        Node* current = head;
+        cout << "\n=== HANG DOI CAP CUU ===\n";
+        while (current != nullptr) {
+            cout << "Ma so: " << current->data.stt
+                 << "Ten: " << current->data.name
+                 << "Tuoi: " << current->data.age
+                 << "Trieu chung: " << current->data.symptom
+                 << "Muc uu tien: " << current->data.priority << '\n';
+            current = current->next;
+        }
+    }
+    bool isEmpty() const {
+        return head == nullptr;
+    }
+    int getSize() const {
+        return size;
+    }
+};    
