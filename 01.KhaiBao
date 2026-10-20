@@ -3,7 +3,7 @@
 #include<iomanip>
 
 using namespace std;
-//khai bao thong tin benh nhan
+//Khai báo thông tin bệnh nhân
 struct BenhNhan {
 int stt;
 string HoTen;
