@@ -1,2 +1,13 @@
 Hospital::Hospital() {
   autoSTT = 1;
+}
+void Hospital::recievePatient() {
+  Patient p;
+  p.stt = autoSTT++;
+  cout<<"\n TIEP NHAN BENH NHAN (STT: "<<p.stt<<")\n";
+  cout<<"Nhap ho ten benh nhan: ";
+  getline(cin>>ws, ơp.nam);
+  cout<<"Nhap tuoi: ";
+  cin>>p.age;
+  getline(cin>>ws,p,symptom);
+  cout<<"Muc do uu tien (1: Thuong, 2: Cap cuu nhe, 3: Nguy kich);
