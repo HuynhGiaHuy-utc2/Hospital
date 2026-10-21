@@ -1,1 +1,8 @@
-
+int main() {
+Hospital hospital;
+int choice = -1;
+    do {
+        cout << "\n QUAN LY BENH VIEN \n";
+        cout << "1. Tiep nhan benh nhan moi\n";
+        cout << "2. Goi so kham benh tu dong\n";
+        cout << "3. Chuyen benh nhan sang Cap cuu\n";
