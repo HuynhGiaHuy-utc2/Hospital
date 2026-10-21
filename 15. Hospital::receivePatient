@@ -10,4 +10,16 @@ void Hospital::recievePatient() {
   cout<<"Nhap tuoi: ";
   cin>>p.age;
   getline(cin>>ws,p,symptom);
-  cout<<"Muc do uu tien (1: Thuong, 2: Cap cuu nhe, 3: Nguy kich);
+  cout<<"Muc do uu tien (1: Thuong, 2: Cap cuu nhe, 3: Nguy kich): ";
+  cin>>p.priority;
+
+  if (p.priority == 1) {
+    int choice;
+    cout<<"Chon phong kham (1: Phong Noi,2: Phong Ngoai): "l;
+    cin>>choice;
+    if(choice==1) {
+      roomInternal.push(p);
+      int wallTime = (roomInternal.size() - 1) * 15;
+      
+
+  
