@@ -11,3 +11,26 @@ int choice = -1;
         cout << "\n";
         cout << "Nhap lua chon cua ban: ";
         cin >> choice;
+switch (choice) {
+            case 1: 
+                hospital.receivePatient(); 
+                break;
+            case 2: 
+                hospital.callPatient(); 
+                break;
+            case 3: 
+                hospital.transferToEmergency(); 
+                break;
+            case 4: 
+                hospital.Report(); 
+                break;
+            case 0: 
+                cout << "\nDa giai phong bo nho va thoat chuong trinh!\n"; 
+                break;
+            default: 
+                cout << "\nLua chon khong hop le! Vui long chon lai.\n";
+                break;
+        }
+    } while (choice != 0);
+    return 0;
+}
