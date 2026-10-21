@@ -1,1 +1,3 @@
-
+void RegularQueue::printQueue() {
+    if (isEmpty()) {
+        cout << " Khong co benh nhan cho\n";
