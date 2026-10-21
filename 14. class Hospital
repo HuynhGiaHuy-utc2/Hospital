@@ -1,1 +1,14 @@
+class Hospital {
+public :
+  RegularQueue roomInternal;
+  RegularQueue roomSurgical;
+  EmergencyQueue emergency;
+  RegularQueue history;
 
+  int autoSTT;
+  Hospital();
+  void recievePatient;
+  void callPatient;
+  void transferToEmergency;
+  void Report();
+};
