@@ -6,3 +6,8 @@ int choice = -1;
         cout << "1. Tiep nhan benh nhan moi\n";
         cout << "2. Goi so kham benh tu dong\n";
         cout << "3. Chuyen benh nhan sang Cap cuu\n";
+        cout << "4. Xem bao cao thong ke cac phong\n";
+        cout << "0. Thoat chuong trinh\n";
+        cout << "\n";
+        cout << "Nhap lua chon cua ban: ";
+        cin >> choice;
