@@ -1,0 +1,4 @@
+struct Node {
+Patient data;
+Node* next;
+};
