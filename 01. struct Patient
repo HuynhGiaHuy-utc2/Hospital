@@ -1,0 +1,13 @@
+#include<iostream>
+#include<string>
+
+using namespace std;
+
+struct Patient {
+int stt;
+string name;
+int age;
+string symptom;
+int priority;
+bool operator<(const Patient& other) const;
+};
