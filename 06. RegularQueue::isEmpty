@@ -1,1 +1,12 @@
-
+void RegularQueue::push(Patient p) {
+    Node* newNode = new Node();
+    newNode->data = p;
+    newNode->next = NULL;
+    if (isEmpty()) {
+        head = tail = newNode;
+    } else {
+        tail->next = newNode;
+        tail = newNode;
+    }
+    count++;
+}
