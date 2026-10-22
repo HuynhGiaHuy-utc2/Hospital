@@ -1,1 +1,21 @@
-
+void EmergencyQueue::push(Patient p) {
+    Node* newNode = new Node();
+    newNode->data = p;
+    newNode->next = NULL;
+    if (isEmpty() || head->data < p) {
+        newNode->next = head;
+        head = newNode;
+        if (tail == NULL) tail = newNode;
+    } else {
+        Node* curr = head;
+        while (curr->next != NULL && !(curr->next->data < p)) {
+            curr = curr->next;
+        }
+        newNode->next = curr->next;
+        curr->next = newNode;
+        if (newNode->next == NULL) {
+            tail = newNode;
+        }
+    }
+    count++;
+}
