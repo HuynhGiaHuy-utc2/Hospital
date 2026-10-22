@@ -1,1 +1,14 @@
-
+RegularQueue::RegularQueue() {
+    head = NULL;
+    tail = NULL;
+    count = 0;
+}
+RegularQueue::~RegularQueue() {
+    clear();
+}
+bool RegularQueue::isEmpty() {
+    return head == NULL;
+}
+int RegularQueue::size() {
+    return count;
+}
