@@ -1,1 +1,20 @@
-
+Patient EmergencyQueue::popHighestPriority() {
+    if (isEmpty()) {
+        Patient emptyPatient = {0, "", 0, "", 0};
+        return emptyPatient;
+    }
+    Node* temp = head;
+    Patient result = temp->data;
+    head = head->next;
+    if (head == NULL) {
+        tail = NULL;
+    }
+    delete temp;
+    count--;
+    return result;
+}
+void EmergencyQueue::clear() {
+    while (!isEmpty()) {
+        popHighestPriority();
+    }
+}
