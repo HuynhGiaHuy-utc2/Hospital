@@ -20,6 +20,6 @@ void Hospital::recievePatient() {
     if(choice==1) {
       roomInternal.push(p);
       int wallTime = (roomInternal.size() - 1) * 15;
-      
+      tao chua code xong th nao lam thì code bổ sung
 
   
