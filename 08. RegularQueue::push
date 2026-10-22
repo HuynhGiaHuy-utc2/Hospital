@@ -1,1 +1,15 @@
+void RegularQueue::printQueue() {
+    if (isEmpty()) {
+        cout << " Khong co benh nhan\n";
+        return;
 
+    }
+    Node* temp = head;
+    int i = 1;
+    while (temp != NULL) {
+        cout << "   " << i++ << ". STT [" << temp->data.stt << "] "
+             << temp->data.name << "\t| Trieu chung: "
+             << temp->data.symptom << "\n";
+        temp = temp->next;
+    }
+}
