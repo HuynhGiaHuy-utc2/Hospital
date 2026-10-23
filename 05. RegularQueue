@@ -1,7 +1,7 @@
 RegularQueue::RegularQueue() {
     head = NULL;
     tail = NULL;
-    count = 0;
+    count =  0;
 }
 RegularQueue::~RegularQueue() {
     clear();
