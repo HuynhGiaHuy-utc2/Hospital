@@ -3,15 +3,15 @@ Patient EmergencyQueue::popHighestPriority() {
     Patient emptyPatient = {0, "", 0, "", 0};
     return emptyPatient;
   }
-  Node* temp = head;
-  Patient result = temp->data;
+  Node* p = head;
+  Patient x = p->data;
   head = head->next ;
   if(head == NULL) {
     tail = NULL;
   }
-  delete temp ;
+  delete p ;
   count--;
-  returnt result;
+  returnt x;
 }
 void EmergencyQueue::clear() {
   while (!isEmpty()) {
