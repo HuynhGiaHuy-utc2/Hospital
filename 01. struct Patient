@@ -9,5 +9,5 @@ string name;
 int age;
 string symptom;
 int priority;
-bool operator<(const Patient& other) const;
+bool operator<(const Patient& x) const;
 };
