@@ -4,7 +4,7 @@ EmergencyQueue::EmergencyQueue() {
   count=0;
 }
 EmergencyQueue::~EmergencyQueue() {
-  return head == NULL;
+  clear();
 }
 bool EmergencyQueue::isEmpty() {
   return head == NULL;
