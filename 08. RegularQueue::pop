@@ -3,15 +3,15 @@ Patient RegularQueue::pop() {
         Patient emptyPatient = {0, "", 0, "", 0};
         return emptyPatient;
     }
-    Node* temp = head;
-    Patient p = temp->data;
+    Node* p = head;
+    Patient x = p->data;
     head = head->next;
     if (head == NULL) {
         tail = NULL;
     }
-    delete temp;
+    delete p;
     count--;
-    return p;
+    return x;
 }
 void RegularQueue::clear() {
     while (!isEmpty()) {
