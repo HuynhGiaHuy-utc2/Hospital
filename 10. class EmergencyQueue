@@ -3,6 +3,7 @@ public :
   Node* head;
   Node* tail;
   int count;
+
   EmergencyQueue();
   ~EmergencyQueue();
   bool isEmpty();
