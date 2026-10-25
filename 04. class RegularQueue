@@ -3,11 +3,14 @@ public:
     Node* head;
     Node* tail;
     int count;
+
     RegularQueue();
     ~RegularQueue();
     bool isEmpty();
     int size();
-    void push(Patient p);
+
+    void push(Patient x);
+    void pushFront(Patient x);
     Patient pop();
     void clear();
     void printQueue();
