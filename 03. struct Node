@@ -1,4 +1,4 @@
 struct Node {
-Patient data;
-Node* next;
+    Patient data;
+    Node* next;
 };
