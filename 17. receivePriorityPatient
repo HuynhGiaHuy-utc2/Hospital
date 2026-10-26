@@ -1,0 +1,25 @@
+void Hospital::receivePriorityPatient() {
+    Patient x;
+    x.stt = autoSTT++;
+    cout << "\n TIEP NHAN BENH NHAN TAI KHAM [UU TIEN DAU HANG] (STT: " << x.stt << ")\n";
+    cout << "Nhap ho ten benh nhan: "; 
+    getline(cin >> ws, x.name);
+    cout << "Nhap tuoi: "; 
+    cin >> x.age;
+    cout << "Nhap trieu chung / Ket qua xet nghiem: "; 
+    getline(cin >> ws, x.symptom);
+    x.priority = 1;
+    
+    int choice;
+    cout << "Chon phong tai kham (1: Phong Noi, 2: Phong Ngoai): ";
+    cin >> choice;
+    if (choice == 1) {
+        roomInternal.pushFront(x); // CHUC NANG DEQUE: Them vao DAU hang doi Phong Noi
+        cout << "=> Da them vao dau hang doi Phong Kham Noi! Benh nhan se duoc kham tiep theo.\n";
+    } else if (choice == 2) {
+        roomSurgical.pushFront(x); // CHUC NANG DEQUE: Them vao DAU hang doi Phong Ngoai
+        cout << "=> Da them vao dau hang doi Phong Kham Ngoai! Benh nhan se duoc kham tiep theo.\n";
+    } else {
+        cout << "=> Lua chon phong khong hop le!\n";
+    }
+}
