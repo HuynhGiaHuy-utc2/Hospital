@@ -1,0 +1,32 @@
+void Hospital::callPatient() {
+    cout << "\n GOI SO THUC HIEN KHAM \n";
+    if (!emergency.isEmpty()) {
+        Patient x = emergency.popHighestPriority();
+        cout << "[CAP CUU KHAN CAP]: Moi benh nhan " << x.name 
+             << " (STT: " << x.stt << " - Muc uu tien: " << x.priority << ") vao Phong Cap Cuu ngay!\n";
+        history.push(x);
+        return;
+    }
+    int choice;
+    cout << "Chon phong kham can goi (1: Phong Noi, 2: Phong Ngoai): ";
+    cin >> choice;
+    if (choice == 1) {
+        if (!roomInternal.isEmpty()) {
+            Patient x = roomInternal.pop();
+            cout << "[PHONG NOI]: Moi benh nhan " << x.name << " (STT: " << x.stt << ") vao kham.\n";
+            history.push(x);
+        } else {
+            cout << "=> Phong Noi khong co benh nhan cho.\n";
+        }
+    } else if (choice == 2) {
+        if (!roomSurgical.isEmpty()) {
+            Patient x = roomSurgical.pop();
+            cout << "[PHONG NGOAI]: Moi benh nhan " << x.name << " (STT: " << x.stt << ") vao kham.\n";
+            history.push(x);
+        } else {
+            cout << "=> Phong Ngoai khong co benh nhan cho.\n";
+        }
+    } else {
+        cout << "=> Lua chon phong khong hop le!\n";
+    }
+}
