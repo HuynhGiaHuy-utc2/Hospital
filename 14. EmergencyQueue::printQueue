@@ -1,15 +1,15 @@
 void EmergencyQueue::printQueue() {
-  if(isEmpty()) {
-    cout<<" Khong co ca cap cuu nao\n";
+  if (isEmpty()) {
+    cout << " Khong co ca cap cuu nao\n";
     return;
   }
   Node* p = head;
-  int i=1;
+  int i = 1;
   while (p!=NULL) {
-    cout<<"  "<<i++<<". [EMG-"<<temp->data.stt<<"] "
+    cout<<"  " << i++ << ". [EMG-" << p->data.stt << "] "
         << p->data.name
-        <<" | Muc uu tien: "<<p->data,priority
-        <<" | Trieu chung: "<<p->data.symptom<<"\n";
+        <<" | Muc uu tien: " << p->data,priority
+        <<" | Trieu chung: " << p->data.symptom << "\n";
       p = p->next;
   }
 }
