@@ -1,6 +1,6 @@
 bool Patient::operator<(const Patient& x) const {
-if (this->priority == x.priority) {
-return this->stt > x.stt;
-}
-return this->priority < x.priority;
+    if (this->priority == x.priority) {
+        return this->stt > x.stt;
+    }
+    return this->priority < x.priority;
 }
