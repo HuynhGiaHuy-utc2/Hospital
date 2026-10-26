@@ -1,12 +1,12 @@
 Patient EmergencyQueue::popHighestPriority() {
-  if(ifEmpty()) {
+  if (ifEmpty()) {
     Patient emptyPatient = {0, "", 0, "", 0};
     return emptyPatient;
   }
   Node* p = head;
   Patient x = p->data;
   head = head->next ;
-  if(head == NULL) {
+  if (head == NULL) {
     tail = NULL;
   }
   delete p ;
