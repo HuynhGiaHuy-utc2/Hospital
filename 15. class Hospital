@@ -8,6 +8,7 @@ public :
   int autoSTT;
   Hospital();
   void recievePatient;
+  void receivePriorityPatient(); 
   void callPatient;
   void transferToEmergency;
   void Report();
