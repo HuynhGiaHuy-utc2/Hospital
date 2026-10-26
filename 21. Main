@@ -1,27 +1,33 @@
 int main() {
-Hospital hospital;
-int choice = -1;
+    Hospital hospital;
+    int choice = -1;
+    
     do {
         cout << "\n QUAN LY BENH VIEN \n";
-        cout << "1. Tiep nhan benh nhan moi\n";
-        cout << "2. Goi so kham benh tu dong\n";
-        cout << "3. Chuyen benh nhan sang Cap cuu\n";
-        cout << "4. Xem bao cao thong ke cac phong\n";
+        cout << "1. Tiep nhan benh nhan moi (Kham thuong)\n";
+        cout << "2. Tiep nhan benh nhan tai kham (Uu tien)\n";
+        cout << "3. Goi so kham benh tu dong\n";
+        cout << "4. Chuyen benh nhan sang Khoa Cap Cuu\n";
+        cout << "5. Xem bao cao thong ke cac phong\n";
         cout << "0. Thoat chuong trinh\n";
         cout << "\n";
         cout << "Nhap lua chon cua ban: ";
         cin >> choice;
-switch (choice) {
+        
+        switch (choice) {
             case 1: 
                 hospital.receivePatient(); 
                 break;
             case 2: 
-                hospital.callPatient(); 
+                hospital.receivePriorityPatient(); 
                 break;
             case 3: 
-                hospital.transferToEmergency(); 
+                hospital.callPatient(); 
                 break;
             case 4: 
+                hospital.transferToEmergency(); 
+                break;
+            case 5: 
                 hospital.Report(); 
                 break;
             case 0: 
@@ -32,5 +38,6 @@ switch (choice) {
                 break;
         }
     } while (choice != 0);
+
     return 0;
 }
