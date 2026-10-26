@@ -1,5 +1,5 @@
 class Hospital {
-public :
+public:
   RegularQueue roomInternal;
   RegularQueue roomSurgical;
   EmergencyQueue emergency;
