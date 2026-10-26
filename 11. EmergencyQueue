@@ -1,7 +1,7 @@
 EmergencyQueue::EmergencyQueue() {
   head = NULL;
   tail = NULL;
-  count=0;
+  count = 0;
 }
 EmergencyQueue::~EmergencyQueue() {
   clear();
