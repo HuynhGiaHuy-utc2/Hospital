@@ -2,7 +2,7 @@ void EmergencyQueue::push(Patient x) {
   Node* p = new Node();
   p->data = x;
   p->next = NULL;
-  if(isEmpty() || head->data < x) {
+  if (isEmpty() || head->data < x) {
     p->next = head;
     head = p;
     if(tail == NULL) tail = p;
