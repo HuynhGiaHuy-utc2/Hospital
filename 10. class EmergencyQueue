@@ -1,5 +1,5 @@
 class EmergencyQueue {
-public :
+public:
   Node* head;
   Node* tail;
   int count;
@@ -8,7 +8,7 @@ public :
   ~EmergencyQueue();
   bool isEmpty();
   int size();
-  void push(Patient p);
+  void push(Patient x);
   Patient popHighestPriority();
   void clear();
   void printQueue;
