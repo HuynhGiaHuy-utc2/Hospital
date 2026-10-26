@@ -1,0 +1,19 @@
+void Hospital::transferToEmergency() {
+    int choice;
+    cout << "\n CHUYEN BENH NHAN SANG KHOA CAP CUU \n";
+    cout << "Chuyen tu phong kham nao? (1: Noi, 2: Ngoai): ";
+    cin >> choice;
+    if (choice == 1 && !roomInternal.isEmpty()) {
+        Patient x = roomInternal.pop();
+        x.priority = 3; 
+        emergency.push(x);
+        cout << "=> Da chuyen benh nhan " << x.name << " tu Phong Noi sang Hang doi Cap Cuu!\n";
+    } else if (choice == 2 && !roomSurgical.isEmpty()) {
+        Patient x = roomSurgical.pop();
+        x.priority = 3; 
+        emergency.push(x);
+        cout << "=> Da chuyen benh nhan " << x.name << " tu Phong Ngoai sang Hang Doi Cap Cuu!\n";
+    } else {
+        cout << "=> Phong chon khong co benh nhan cho hoac lua chon khong hop le.\n";
+    }
+}
