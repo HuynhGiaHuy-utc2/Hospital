@@ -1,0 +1,11 @@
+void Hospital::Report() {
+    cout << "\n BAO CAO THONG KE HANG DOI BENH VIEN \n";
+    cout << "1. KHOA CAP CUU (EmergencyQueue - Dang cho: " << emergency.size() << "):\n";
+    emergency.printQueue();
+    cout << "\n2. PHONG KHAM NOI (RegularQueue/Deque - Dang cho: " << roomInternal.size() << "):\n";
+    roomInternal.printQueue();
+    cout << "\n3. PHONG KHAM NGOAI (RegularQueue/Deque - Dang cho: " << roomSurgical.size() << "):\n";
+    roomSurgical.printQueue();
+    cout << "\n4. DA HOAN THANH KHAM (Lich su - So ca: " << history.size() << "):\n";
+    history.printQueue();
+}
