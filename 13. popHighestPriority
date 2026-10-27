@@ -11,7 +11,7 @@ Patient EmergencyQueue::popHighestPriority() {
   }
   delete p ;
   count--;
-  returnt x;
+  return x;
 }
 void EmergencyQueue::clear() {
   while (!isEmpty()) {
