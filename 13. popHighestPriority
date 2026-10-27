@@ -1,5 +1,5 @@
 Patient EmergencyQueue::popHighestPriority() {
-  if (ifEmpty()) {
+  if (isEmpty()) {
     Patient emptyPatient = {0, "", 0, "", 0};
     return emptyPatient;
   }
